@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // copyinng through object assign
+
+        let a ={
+                name: "John",
+                age: 30
+            };
+        let b ={};
+        Object.assign(b,a);
+        b.status = 'employed';
+
+        console.log(a,b);
+
+        //copying through for in
+
+        let user = {
+            name: "John",
+            age: 30
+        }
+
+        let clone = {};
+
+        for (let key in user){
+            clone[key] = user[key];
+        }
+
+        clone.name = "Pete"; 
+
+        console.log(user,clone)
+
+        
+    </script> 
+</body>
+</html>
