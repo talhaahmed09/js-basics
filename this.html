@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function makeUser() {
+        return {
+          name: "John",
+          ref() {
+            return this;
+          },
+        };
+      }
+
+      let user = new makeUser();
+      console.log(user.ref().name);
+
+      function userMaker(name) {
+        this.name = name;
+        console.log(this.name);
+      }
+
+      let admin = new userMaker("Admin");
+
+      user1 = { name: "john" };
+      user2 = { name: "doe" };
+
+      function userName() {
+        console.log(this.name);
+      }
+
+      user1.f = userName;
+      user2.f = userName;
+
+      user1.f();
+      user2.f();
+
+      function printName () {
+        setTimeout( () => {console.log(this)}, 3000)
+      }
+
+      const obj1 = {}
+          obj1.name =  'john',
+          obj1.sayName = printName
+    
+    obj1.sayName();
+
+    const personalData = {
+      name: 'talha',
+      age: 23,
+      greetings: function() {
+        setTimeout(() =>{
+          console.log(this)
+        }, 1000)
+      }
+
+    }
+
+
+   console.dir(personalData.greetings)
+
+    </script>
+  </body>
+</html>
