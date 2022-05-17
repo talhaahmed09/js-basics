@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //copying through spread
+        const arr1 = [1,2,3];
+        const arr2 = [...arr1];
+
+        arr2.push(4);
+        console.log(arr1,arr2);
+
+        //copying through for loop
+
+        const a = ['a','b','c'];
+        const b = [];
+        for (let i = 0; i < a.length; i++){
+            b.push(a[i])
+        }
+        b.push('d');
+
+        console.log(a,b)
+
+        //copying through Array.from
+        const c = [12,34,56];
+        const d = Array.from(c);
+
+        d.push(78);
+        
+        console.log(c,d)
+
+    </script>
+</body>
+</html>
