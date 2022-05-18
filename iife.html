@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const withdrawTransaction = (balance) => ((copy) => {
+            let balance = copy;
+
+            const virus = () => {
+                console.log('Virus')
+            }
+
+            virus();
+
+            return {
+                withdraw(amount) {
+                    if(balance >= amount){
+                        balance -= amount;
+        return balance;
+                    }
+                    return 'Insufficient Money';
+                }
+            }
+        })(balance) ;
+        
+        const firstTransaction = withdrawTransaction(100);
+
+        console.log(firstTransaction.balance);
+        console.log(firstTransaction.virus);
+        console.log(firstTransaction.withdraw(20));
+        console.log(firstTransaction.withdraw(80));
+    </script>
+</body>
+</html>
